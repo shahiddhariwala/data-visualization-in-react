@@ -22,7 +22,7 @@ class PlotlyIndex extends React.Component {
                             },
                             { type: 'bar', x: ["Students", "Teachers", "Courses"], y: [20, 12, 6] },
                         ]}
-                        layout={{ width: 320, height: 240, title: 'Zotalabs' }}
+                        layout={{ width: 320, height: 240, title: 'Institute Strength' }}
                     />
                 </div>
             </>
