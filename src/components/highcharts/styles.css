@@ -1,4 +1,4 @@
-.plot-container
+.plot-containerhc
 {
   border-radius: 20px;
   background-color: white;
@@ -6,7 +6,9 @@
   width: 100%;
   margin: 20px;
   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  
   text-align: center;
 }
