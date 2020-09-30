@@ -20,7 +20,12 @@ class PlotlyIndex extends React.Component {
                             //     mode: 'lines+markers',
                             //     marker: { color: 'red' },
                             // },
-                            { type: 'bar', x: ["Students", "Teachers", "Courses"], y: [20, 12, 6] },
+                            {
+                                type: 'bar', x: ["Students", "Teachers", "Courses"], y: [20, 12, 6], marker: {
+                                    color: '#7CB5EC',
+                                    width: 1
+                                },
+                            },
                         ]}
                         layout={{ width: "auto", height: "30%", title: 'Institute Strength' }}
                     />
@@ -30,7 +35,7 @@ class PlotlyIndex extends React.Component {
                                 x: ["Physics", "Chemistry", "Maths"],
                                 y: [30, 40, 5],
                                 marker: {
-                                    color: 'blue',
+                                    color: '#7CB5EC',
                                     width: 1
                                 },
                                 name: 'Fees Paid',
@@ -40,7 +45,7 @@ class PlotlyIndex extends React.Component {
                                 x: ["Physics", "Chemistry", "Maths"],
                                 y: [70, 10, 75],
                                 marker: {
-                                    color: 'red',
+                                    color: '#EE99B8',
                                     width: 1
                                 },
                                 name: 'Fees Not Paid',
@@ -72,6 +77,38 @@ class PlotlyIndex extends React.Component {
                             },
                         ]}
                         layout={{ width: "auto", height: "30%", title: 'Students Trend' }}
+                    />
+                    <Plot
+                        data={[
+                            {
+                                values: [16, 15, 12, 6, 10],
+                                labels: ['10-30%', '30-50%', '50-70%', "70-90%","90%+"],
+                                domain: { column: 0 },
+                                name: 'Scores',
+                                hoverinfo: 'percent+name',
+                                hole: .4,
+                                type: 'pie'
+                            }
+                        ]}
+                        layout={
+
+                            {
+                                title: 'Scores Percentile View',
+                                annotations: [
+                                    {
+                                        font: {
+                                            size: 20
+                                        },
+                                        showarrow: false,
+                                        text: '',
+
+                                    },
+                                ],
+                                height: 400,
+                                width: 600,
+                                showlegend: false,
+                            }
+                        }
                     />
                 </div>
             </>

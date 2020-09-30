@@ -3,7 +3,7 @@ import "./styles.css";
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 
-const options1 = {
+const simpleBarGraphOptions = {
     title: {
         text: 'Institute Strength '
     },
@@ -28,7 +28,7 @@ const options1 = {
     }]
 }
 
-const options2 = {
+const stackBarOptions = {
     title: {
         text: 'Fee Status '
     },
@@ -59,7 +59,7 @@ const options2 = {
     },
 }
 
-const options3 = {
+const linesOptions = {
     title: {
         text: 'Students Trend'
     },
@@ -96,6 +96,36 @@ const options3 = {
     },
 }
 
+const donutOptions = {
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: 'Scores Percentile View'
+    },
+    series: [{
+        minPointSize: 10,
+        innerSize: '20%',
+        zMin: 0,
+        name: 'Percentile',
+        data: [{
+            name: '0-30%',
+            y: 16,
+        }, {
+            name: '30-50%',
+            y: 15,
+        }, {
+            name: '50-70%',
+            y: 12,
+        }, {
+            name: '70-90%',
+            y: 6,
+        }, {
+            name: '90%+',
+            y: 10,
+        }]
+    }]
+}
 class HighChartIndex extends React.Component {
     render() {
         return (
@@ -105,19 +135,25 @@ class HighChartIndex extends React.Component {
                     <div style={{ width: "40%" }}>
                         <HighchartsReact
                             highcharts={Highcharts}
-                            options={options1}
+                            options={simpleBarGraphOptions}
                         />
                     </div>
                     <div style={{ width: "40%" }}>
                         <HighchartsReact
                             highcharts={Highcharts}
-                            options={options2}
+                            options={stackBarOptions}
                         />
                     </div>
                     <div style={{ width: "40%" }}>
                         <HighchartsReact
                             highcharts={Highcharts}
-                            options={options3}
+                            options={linesOptions}
+                        />
+                    </div>
+                    <div style={{ width: "40%" }}>
+                        <HighchartsReact
+                            highcharts={Highcharts}
+                            options={donutOptions}
                         />
                     </div>
                 </div>
