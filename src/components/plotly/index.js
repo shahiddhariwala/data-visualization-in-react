@@ -78,6 +78,24 @@ class PlotlyIndex extends React.Component {
                         ]}
                         layout={{ width: "auto", height: "30%", title: 'Students Trend' }}
                     />
+                         <Plot
+                        data={[
+                            {
+                                x: [2014, 2015, 2016, 2017, 2018, 2019, 2020],
+                                y: [160, 50, 110, 90, 101, 123, 400],
+                                type: 'bar',
+                                name: 'Physics'
+                            },
+                            {
+                                x: [2014, 2015, 2016, 2017, 2018, 2019, 2020],
+                                y: [190, 85, 110, 189, 180, 223, 300],
+                                type: 'bar',
+                                name: 'Chemistry'
+                            },
+                            
+                        ]}
+                        layout={{ width: "auto", height: "30%", title: 'Students Subjects Marks Comparison' }}
+                    />
                     <Plot
                         data={[
                             {
